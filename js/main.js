@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       } else if (formType === "login") {
         event.preventDefault();
-        shouldApplyValidationState = handleLogin(form, status);
+        handleLogin(form, status);
+        shouldApplyValidationState = false;
       } else {
         event.preventDefault();
 
@@ -101,25 +102,50 @@ function loadCurrentCase() {
 }
 
 var barkvaultUsers = [];
+var usersReadyPromise;
 
 function initializeUsers() {
-  fetch("model/users.json")
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Failed to load users model.");
-      }
+  if (!usersReadyPromise) {
+    usersReadyPromise = fetch("model/users.json")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to load users model.");
+        }
 
-      return response.json();
-    })
-    .then(function (data) {
-      barkvaultUsers = data && Array.isArray(data.users) ? data.users : [];
-    })
-    .catch(function () {
-      barkvaultUsers = [];
-    });
+        return response.json();
+      })
+      .then(function (data) {
+        barkvaultUsers = data && Array.isArray(data.users) ? data.users : [];
+        return barkvaultUsers;
+      })
+      .catch(function () {
+        barkvaultUsers = [];
+        return barkvaultUsers;
+      });
+  }
+
+  return usersReadyPromise;
 }
 
 function handleLogin(form, status) {
+  var submitButton = form.querySelector("button[type='submit']");
+  var usernameField = form.querySelector("input[type='text']");
+  var passwordField = form.querySelector("input[type='password']");
+
+  if (status) {
+    status.textContent = "Checking credentials...";
+  }
+
+  if (submitButton) {
+    submitButton.disabled = true;
+  }
+
+  initializeUsers().then(function () {
+    completeLogin(form, status, usernameField, passwordField, submitButton);
+  });
+}
+
+function completeLogin(form, status, usernameField, passwordField, submitButton) {
   var usernameField = form.querySelector("input[type='text']");
   var passwordField = form.querySelector("input[type='password']");
   var username = usernameField ? usernameField.value.trim() : "";
@@ -150,10 +176,14 @@ function handleLogin(form, status) {
     window.setTimeout(function () {
       window.location.href = "landing.html";
     }, 300);
-    return false;
+    return;
   }
 
-  return true;
+  form.classList.add("was-validated");
+
+  if (submitButton) {
+    submitButton.disabled = false;
+  }
 }
 
 function setText(selector, value) {

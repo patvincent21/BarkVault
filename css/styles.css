@@ -266,29 +266,38 @@ p {
   padding: 2rem;
 }
 
-.modal-theme {
+.modal-content.modal-theme {
+  background-color: #172435;
   background: linear-gradient(180deg, rgba(13, 27, 42, 0.96), rgba(27, 38, 59, 0.96));
   backdrop-filter: blur(14px);
+  color: var(--text-main);
 }
 
-.modal-theme .modal-header,
-.modal-theme .modal-body {
+.modal-content.modal-theme .modal-header,
+.modal-content.modal-theme .modal-body {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
 
-.modal-theme .modal-header {
+.modal-content.modal-theme .modal-header {
   position: relative;
   justify-content: center;
   text-align: center;
   padding-top: 1.75rem;
 }
 
-.modal-theme .modal-header > div {
+.modal-content.modal-theme .modal-header > div {
   width: 100%;
 }
 
-.modal-theme .btn-close {
+.modal-content.modal-theme .modal-title,
+.modal-content.modal-theme .form-label,
+.modal-content.modal-theme .page-copy,
+.modal-content.modal-theme .form-note {
+  color: var(--text-main);
+}
+
+.modal-content.modal-theme .btn-close {
   filter: invert(1) grayscale(1);
   position: absolute;
   top: 1.25rem;
