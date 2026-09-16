@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>barkvault</title>
+    <title>barkvault | Crime Investigation Game</title>
     <meta
       name="description"
-      content="A bold Bootstrap-based static website starter for modern product and portfolio pages."
+      content="barkvault is a crime investigation game where players review evidence, alibis, and official reports to identify the criminal."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,13 +20,17 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="icon" type="image/jpeg" href="images/image_a9e12c81.jpg" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <nav class="navbar navbar-expand-lg navbar-dark py-3">
         <div class="container">
-          <a class="navbar-brand brand-mark" href="index.html">barkvault</a>
+          <a class="navbar-brand brand-mark" href="index.html">
+            <img src="images/image_a9e12c81.jpg" alt="barkvault chihuahua icon" class="brand-icon" />
+            <span>barkvault</span>
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -41,10 +45,11 @@
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
               <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
               <li class="nav-item">
-                <a class="btn btn-signal ms-lg-2" href="contact.html">Start a Project</a>
+                <button class="btn btn-signal ms-lg-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  Login
+                </button>
               </li>
             </ul>
           </div>
@@ -55,40 +60,40 @@
         <div class="container py-5">
           <div class="row align-items-center g-5 py-lg-5">
             <div class="col-lg-7">
-              <p class="eyebrow">Static Bootstrap starter</p>
-              <h1 class="display-2 hero-title">Launch a polished website without adding a build step.</h1>
+              <p class="eyebrow">Crime investigation game</p>
+              <h1 class="display-2 hero-title">Study the evidence. Break the alibi. Name the criminal.</h1>
               <p class="lead hero-copy">
-                Northstar Studio is a clean starting point for portfolios, agencies, and product landing pages.
-                It uses plain HTML, Bootstrap, JavaScript, and a custom visual system that is ready for GitHub publishing.
+                barkvault is a deduction-driven crime solving experience where players inspect police reports,
+                medical findings, witness statements, and timeline gaps to pinpoint who committed the crime.
               </p>
               <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-                <a class="btn btn-signal btn-lg" href="about.html">See the Story</a>
-                <a class="btn btn-outline-light btn-lg" href="#highlights">Explore Features</a>
+                <a class="btn btn-signal btn-lg" href="#highlights">Enter the Case Files</a>
+                <a class="btn btn-outline-light btn-lg" href="contact.html">Contact the Team</a>
               </div>
             </div>
             <div class="col-lg-5">
               <div class="hero-card reveal-up">
-                <p class="hero-card-label">Current focus</p>
-                <h2>Fast, static, deployable.</h2>
-                <p>
-                  Duplicate these sections, replace the copy, and publish directly to GitHub Pages.
+                <p class="hero-card-label">Current case file</p>
+                <h2 data-case-title>Loading case...</h2>
+                <p data-case-summary>
+                  Pulling the active investigation from the case model.
                 </p>
                 <div class="stat-grid">
                   <div>
-                    <span>3</span>
-                    <small>starter pages</small>
+                    <span data-case-evidence-count>0</span>
+                    <small>evidence items</small>
                   </div>
                   <div>
-                    <span>0</span>
-                    <small>build tools</small>
+                    <span data-case-suspect-count>0</span>
+                    <small>suspect alibis</small>
                   </div>
                   <div>
-                    <span>100%</span>
-                    <small>Bootstrap based</small>
+                    <span data-case-report-count>0</span>
+                    <small>report types</small>
                   </div>
                   <div>
-                    <span>1</span>
-                    <small>shared script file</small>
+                    <span data-case-accusation-count>0</span>
+                    <small>final accusation</small>
                   </div>
                 </div>
               </div>
@@ -101,29 +106,29 @@
         <section id="highlights" class="section-space">
           <div class="container">
             <div class="section-heading reveal-up">
-              <p class="eyebrow">Why this starter works</p>
-              <h2>Everything stays simple, but the presentation still feels intentional.</h2>
+              <p class="eyebrow">How barkvault plays</p>
+              <h2>Players move through each case by comparing facts instead of guessing blindly.</h2>
             </div>
             <div class="row g-4 mt-1">
               <div class="col-md-4 reveal-up">
                 <article class="feature-card h-100">
                   <span class="feature-index">01</span>
-                  <h3>Bootstrap layout</h3>
-                  <p>Responsive grids, navbar behavior, spacing utilities, and forms are already in place.</p>
+                  <h3>Inspect evidence</h3>
+                  <p>Players review photos, item logs, fingerprints, and scene notes to understand what really happened.</p>
                 </article>
               </div>
               <div class="col-md-4 reveal-up">
                 <article class="feature-card h-100">
                   <span class="feature-index">02</span>
-                  <h3>Custom visual identity</h3>
-                  <p>Typography, gradients, cards, and accent styling make it feel less like default Bootstrap.</p>
+                  <h3>Break alibis</h3>
+                  <p>Witness timelines and suspect statements can be cross-checked against police and medical reports.</p>
                 </article>
               </div>
               <div class="col-md-4 reveal-up">
                 <article class="feature-card h-100">
                   <span class="feature-index">03</span>
-                  <h3>Static hosting ready</h3>
-                  <p>No tooling is required. Open the HTML files directly or publish them on GitHub Pages.</p>
+                  <h3>Make the accusation</h3>
+                  <p>When the contradictions line up, the player identifies the culprit and explains the reasoning.</p>
                 </article>
               </div>
             </div>
@@ -134,36 +139,68 @@
           <div class="container">
             <div class="row g-4 align-items-center">
               <div class="col-lg-6 reveal-up">
-                <p class="eyebrow">Suggested use cases</p>
-                <h2 class="section-title">Use it for a personal brand, small business site, or campaign microsite.</h2>
+                <p class="eyebrow">Core investigation files</p>
+                <h2 class="section-title">Every case in barkvault is built from documents players must connect on their own.</h2>
               </div>
               <div class="col-lg-6">
                 <div class="row g-3">
                   <div class="col-sm-6 reveal-up">
                     <div class="mini-panel">
-                      <h3>Portfolio</h3>
-                      <p>Present work, skills, and contact details with minimal setup.</p>
+                      <h3>Evidence board</h3>
+                      <p>Physical clues and recovered items establish what is known and what has been planted.</p>
                     </div>
                   </div>
                   <div class="col-sm-6 reveal-up">
                     <div class="mini-panel">
-                      <h3>Agency</h3>
-                      <p>Replace the sample content with services, case studies, and client proof.</p>
+                      <h3>Police report</h3>
+                      <p>Incident summaries, officer notes, and timestamps create the baseline narrative.</p>
                     </div>
                   </div>
                   <div class="col-sm-6 reveal-up">
                     <div class="mini-panel">
-                      <h3>Product</h3>
-                      <p>Use the home page for feature messaging and the contact page for signups.</p>
+                      <h3>Medical report</h3>
+                      <p>Cause of injury, time-of-death estimates, and lab results expose impossible stories.</p>
                     </div>
                   </div>
                   <div class="col-sm-6 reveal-up">
                     <div class="mini-panel">
-                      <h3>Event</h3>
-                      <p>Promote a launch, workshop, or conference with a strong one-page experience.</p>
+                      <h3>Suspect alibis</h3>
+                      <p>Each alibi sounds credible until one detail conflicts with the documented evidence.</p>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space">
+          <div class="container">
+            <div class="section-heading reveal-up">
+              <p class="eyebrow">First case preview</p>
+              <h2>Players are dropped into a cold file and must reconstruct the truth from fragments.</h2>
+            </div>
+            <div class="row g-4 mt-1">
+              <div class="col-lg-4 reveal-up">
+                <article class="case-card h-100">
+                  <p class="case-label" data-case-id>Case file</p>
+                  <h3 data-case-preview-title>Loading case...</h3>
+                  <p data-case-preview-summary>Waiting for the current case to load.</p>
+                </article>
+              </div>
+              <div class="col-lg-4 reveal-up">
+                <article class="case-card h-100">
+                  <p class="case-label">Primary conflict</p>
+                  <h3>The timeline does not fit.</h3>
+                  <p>The suspect says they left before midnight, yet a medical estimate places the attack later.</p>
+                </article>
+              </div>
+              <div class="col-lg-4 reveal-up">
+                <article class="case-card h-100">
+                  <p class="case-label">Player goal</p>
+                  <h3 data-case-goal>Loading objective...</h3>
+                  <p data-case-goal-summary>Waiting for the current case objective.</p>
+                </article>
               </div>
             </div>
           </div>
@@ -172,10 +209,46 @@
 
       <footer class="site-footer py-4">
         <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-          <p class="mb-0">barkvault static starter</p>
-          <p class="mb-0">Built with HTML, Bootstrap, CSS, and JavaScript.</p>
+          <p class="mb-0">barkvault crime investigation game</p>
+          <p class="mb-0">Evidence, alibis, police files, and medical reports drive every case.</p>
         </div>
       </footer>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-theme">
+          <div class="modal-header border-0 pb-0">
+            <div>
+              <img src="images/image_a9e12c81.jpg" alt="barkvault chihuahua icon" class="modal-brand-icon mb-3" />
+              <p class="eyebrow mb-2">Secure access</p>
+              <h2 class="modal-title fs-3" id="loginModalLabel">Enter barkvault</h2>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <p class="page-copy mb-4">Sign in to access case files, saved deductions, and suspect boards.</p>
+            <form class="needs-validation" novalidate data-form-type="login">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label" for="login-username">Username</label>
+                  <input class="form-control" id="login-username" type="text" placeholder="Detective handle" required />
+                  <div class="invalid-feedback">Please enter your username.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="login-password">Password</label>
+                  <input class="form-control" id="login-password" type="password" placeholder="Password" required />
+                  <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+                <div class="col-12 d-flex flex-column gap-3">
+                  <button class="btn btn-signal btn-lg" type="submit">Login</button>
+                  <span class="form-note" data-form-status aria-live="polite"></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script

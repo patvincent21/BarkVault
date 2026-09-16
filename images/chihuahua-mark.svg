@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">barkvault chihuahua logo</title>
+  <desc id="desc">A black chihuahua silhouette inside a black circular frame.</desc>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#0b0b0d" stroke-width="18" />
+  <path
+    fill="#0b0b0d"
+    d="M104 42c18 10 30 25 42 48 5 10 11 15 19 14 27-3 49 8 63 31 7 12 11 26 11 41 5 4 8 11 7 18-1 9-7 14-15 16-5 28-22 48-49 60-14 7-22 17-28 40l-5 18H66l7-11c17-25 24-49 23-72-1-17-5-31-14-44l18-17-2-10 2-79z"
+  />
+  <path
+    fill="#0b0b0d"
+    d="M103 42l-28 18c15 20 22 38 21 56l2 39 12-16 1-97z"
+  />
+  <path
+    fill="#0b0b0d"
+    d="M164 55l30 23c-7 17-10 36-8 56l-24-5c8-16 10-42 2-74z"
+  />
+  <path
+    fill="#f5f1ea"
+    d="M205 118c7 2 11 6 13 13-8 0-12-4-13-13z"
+  />
+</svg>

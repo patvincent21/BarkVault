@@ -16,13 +16,17 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="icon" type="image/jpeg" href="images/image_a9e12c81.jpg" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <nav class="navbar navbar-expand-lg navbar-dark py-3">
         <div class="container">
-          <a class="navbar-brand brand-mark" href="index.html">barkvault</a>
+          <a class="navbar-brand brand-mark" href="index.html">
+            <img src="images/image_a9e12c81.jpg" alt="barkvault chihuahua icon" class="brand-icon" />
+            <span>barkvault</span>
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -37,10 +41,11 @@
           <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
               <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
               <li class="nav-item">
-                <a class="btn btn-signal ms-lg-2" href="#contact-form">Send a Message</a>
+                <button class="btn btn-signal ms-lg-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  Login
+                </button>
               </li>
             </ul>
           </div>
@@ -53,12 +58,11 @@
             <div class="row g-4 align-items-end">
               <div class="col-lg-6 reveal-up">
                 <p class="eyebrow">Contact</p>
-                <h1 class="page-title">Keep the site static, but still make the contact page feel complete.</h1>
+                <h1 class="page-title">Contact the barkvault team about cases, bugs, or player feedback.</h1>
               </div>
               <div class="col-lg-6 reveal-up">
                 <p class="page-copy">
-                  This starter uses a front-end only form for layout purposes. Replace it with your preferred service
-                  or mailto flow when you are ready.
+                  Use this page to report investigation issues, suggest new crime scenarios, or ask about future releases.
                 </p>
               </div>
             </div>
@@ -69,7 +73,7 @@
           <div class="container">
             <div class="row g-4">
               <div class="col-lg-7 reveal-up">
-                <form class="contact-card needs-validation" novalidate>
+                <form class="contact-card needs-validation" novalidate data-success-message="Message captured for the demo. Connect this form to a backend or form service for real submissions.">
                   <div class="row g-3">
                     <div class="col-md-6">
                       <label class="form-label" for="name">Name</label>
@@ -82,15 +86,15 @@
                       <div class="invalid-feedback">Please enter a valid email.</div>
                     </div>
                     <div class="col-12">
-                      <label class="form-label" for="project">Project type</label>
+                      <label class="form-label" for="project">Inquiry type</label>
                       <select class="form-select" id="project" required>
                         <option selected disabled value="">Choose one</option>
-                        <option>Portfolio website</option>
-                        <option>Business website</option>
-                        <option>Landing page</option>
-                        <option>Other static project</option>
+                        <option>Gameplay feedback</option>
+                        <option>Bug report</option>
+                        <option>New case idea</option>
+                        <option>Partnership inquiry</option>
                       </select>
-                      <div class="invalid-feedback">Please choose a project type.</div>
+                      <div class="invalid-feedback">Please choose an inquiry type.</div>
                     </div>
                     <div class="col-12">
                       <label class="form-label" for="message">Message</label>
@@ -98,24 +102,24 @@
                         class="form-control"
                         id="message"
                         rows="5"
-                        placeholder="Tell us what you want to build"
+                        placeholder="Tell us what you found, what went wrong, or what case idea you want to share"
                         required
                       ></textarea>
                       <div class="invalid-feedback">Please add a short message.</div>
                     </div>
                     <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
                       <button class="btn btn-signal btn-lg" type="submit">Submit</button>
-                      <span class="form-note" id="form-status" aria-live="polite"></span>
+                      <span class="form-note" data-form-status aria-live="polite"></span>
                     </div>
                   </div>
                 </form>
               </div>
               <div class="col-lg-5 reveal-up">
                 <div class="contact-side-panel h-100">
-                  <p class="eyebrow mb-2">Starter notes</p>
-                  <h2>Next step after scaffolding</h2>
+                  <p class="eyebrow mb-2">Direct lines</p>
+                  <h2>Need to reach the investigation desk?</h2>
                   <p>
-                    Connect the form to a service like Formspree, Web3Forms, or your own backend if you need real submissions.
+                    The contact page is currently demo-only, but it is structured for player support, content ideas, and case issue reporting.
                   </p>
                   <hr />
                   <p class="mb-2">Suggested contact details</p>
@@ -133,10 +137,46 @@
 
       <footer class="site-footer py-4">
         <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-          <p class="mb-0">barkvault static starter</p>
-          <p class="mb-0">Frontend-only form with Bootstrap validation.</p>
+          <p class="mb-0">barkvault crime investigation game</p>
+          <p class="mb-0">Contact page ready for player support and case submissions.</p>
         </div>
       </footer>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-theme">
+          <div class="modal-header border-0 pb-0">
+            <div>
+              <img src="images/image_a9e12c81.jpg" alt="barkvault chihuahua icon" class="modal-brand-icon mb-3" />
+              <p class="eyebrow mb-2">Secure access</p>
+              <h2 class="modal-title fs-3" id="loginModalLabel">Enter barkvault</h2>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <p class="page-copy mb-4">Sign in to access case files, saved deductions, and suspect boards.</p>
+            <form class="needs-validation" novalidate data-form-type="login">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label" for="contact-login-username">Username</label>
+                  <input class="form-control" id="contact-login-username" type="text" placeholder="Detective handle" required />
+                  <div class="invalid-feedback">Please enter your username.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="contact-login-password">Password</label>
+                  <input class="form-control" id="contact-login-password" type="password" placeholder="Password" required />
+                  <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+                <div class="col-12 d-flex flex-column gap-3">
+                  <button class="btn btn-signal btn-lg" type="submit">Login</button>
+                  <span class="form-note" data-form-status aria-live="polite"></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script

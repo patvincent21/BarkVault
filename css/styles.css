@@ -80,8 +80,21 @@ main,
 }
 
 .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.brand-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: block;
+  object-fit: cover;
+  border-radius: 999px;
+  background: #f5f1ea;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
 }
 
 .nav-link {
@@ -137,7 +150,9 @@ p {
 .mini-panel,
 .timeline-panel,
 .contact-card,
-.contact-side-panel {
+.contact-side-panel,
+.case-card,
+.modal-theme {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 1.5rem;
@@ -197,8 +212,21 @@ p {
 
 .feature-card,
 .mini-panel,
-.contact-side-panel {
+.contact-side-panel,
+.case-card {
   padding: 1.75rem;
+}
+
+.case-card {
+  min-height: 100%;
+}
+
+.case-label {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  margin-bottom: 0.9rem;
 }
 
 .feature-index {
@@ -247,6 +275,46 @@ p {
 
 .contact-card {
   padding: 2rem;
+}
+
+.modal-theme {
+  background: linear-gradient(180deg, rgba(13, 27, 42, 0.96), rgba(27, 38, 59, 0.96));
+  backdrop-filter: blur(14px);
+}
+
+.modal-theme .modal-header,
+.modal-theme .modal-body {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.modal-theme .modal-header {
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1.75rem;
+}
+
+.modal-theme .modal-header > div {
+  width: 100%;
+}
+
+.modal-theme .btn-close {
+  filter: invert(1) grayscale(1);
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.modal-brand-icon {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+  border-radius: 999px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
 }
 
 .form-control,

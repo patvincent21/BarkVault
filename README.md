@@ -1,13 +1,12 @@
 # barkvault
 
-A static website starter built with Bootstrap, HTML, CSS, and vanilla JavaScript.
+A static crime investigation game landing site built with Bootstrap, HTML, CSS, and vanilla JavaScript.
 
 ## Project structure
 
 ```text
 barkvault/
   index.html
-  about.html
   contact.html
   css/
     styles.css
@@ -19,9 +18,10 @@ barkvault/
 
 - Bootstrap 5 via CDN
 - No build step required
-- Multi-page static layout
+- Home and contact pages with shared game-themed styling
+- Bootstrap login modal for username and password input
 - Responsive navigation and sections
-- Frontend-only contact form with validation styling
+- Frontend-only contact and login form validation styling
 - Ready for GitHub Pages or any static hosting service
 
 ## Run locally
@@ -40,7 +40,7 @@ If you prefer a local server, you can use VS Code Live Server or any static serv
 
 ## Customize
 
-- Replace the placeholder brand name and copy in the HTML files.
+- Replace the sample case content and contact details in the HTML files.
 - Update colors and typography in `css/styles.css`.
 - Extend the JavaScript behavior in `js/main.js`.
 - Add images and additional pages as needed.
