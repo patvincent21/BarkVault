@@ -309,6 +309,25 @@ p {
   font-weight: 500;
 }
 
+.guess-reward-card {
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.guess-reward-code {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(244, 162, 97, 0.35);
+}
+
 .case-label {
   color: var(--accent);
   text-transform: uppercase;
@@ -394,6 +413,10 @@ p {
 .modal-content.modal-theme .page-copy,
 .modal-content.modal-theme .form-note {
   color: var(--text-main);
+}
+
+.modal-content.modal-theme .modal-title.guess-modal-success {
+  color: #7ef7a4;
 }
 
 .modal-content.modal-theme .btn-close {

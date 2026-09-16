@@ -363,7 +363,7 @@ function renderSuspects(suspects) {
       return (
         '<div class="col-lg-6 reveal-up is-visible">' +
         '<article class="case-card case-statement-card">' +
-        '<div class="case-media"><img src="' + buildGeneratedImage('suspect', suspect.imageLabel || suspect.name, suspect.name) + '" alt="Portrait placeholder for ' + escapeAttribute(suspect.name) + '" /></div>' +
+        '<div class="case-media"><img src="' + resolveCaseImage(suspect.imagePath, buildGeneratedImage('suspect', suspect.imageLabel || suspect.name, suspect.name)) + '" alt="Portrait for ' + escapeAttribute(suspect.name) + '" /></div>' +
         '<p class="case-label">' + escapeHtml(suspect.name) + '</p>' +
         '<p class="case-person-meta">' + escapeHtml(String(suspect.age)) + ' years old | ' + escapeHtml(suspect.occupation) + '</p>' +
         '<div class="case-statement">' + escapeHtml(suspect.statement) + '</div>' +
@@ -486,20 +486,70 @@ function renderGuessTheCriminal(guessTheCriminal, solution) {
     var selectedOption = form.querySelector("input[name='criminalGuess']:checked");
 
     if (!selectedOption) {
-      if (status) {
-        status.textContent = "Select a suspect before submitting your accusation.";
-      }
+      showGuessResultModal(
+        "Choose a suspect first",
+        "Select one suspect before submitting your accusation.",
+        null
+      );
       return;
     }
 
     if (selectedOption.value === (solution && solution.criminal)) {
       if (status) {
-        status.textContent = "Correct. " + solution.explanation;
+        status.textContent = "";
       }
-    } else if (status) {
-      status.textContent = "That accusation does not fit the evidence. " + (guessTheCriminal.hint || "Review the contradictions and try again.");
+      showGuessResultModal(
+        "Congratulations! Accusation confirmed",
+        "You identified the correct suspect. " + (solution.explanation || "Your accusation matches the case evidence."),
+        solution && solution.nextCaseCode ? solution.nextCaseCode : null
+      );
+    } else {
+      if (status) {
+        status.textContent = "";
+      }
+      showGuessResultModal(
+        "Wrong accusation",
+        "That accusation does not fit the evidence. " + (guessTheCriminal.hint || "Review the contradictions and try again."),
+        null
+      );
     }
   });
+}
+
+function showGuessResultModal(title, message, rewardCode) {
+  var modalElement = document.getElementById("guessResultModal");
+  var titleElement = document.querySelector("[data-guess-modal-title]");
+  var messageElement = document.querySelector("[data-guess-modal-message]");
+  var rewardContainer = document.querySelector("[data-guess-reward]");
+  var rewardCodeElement = document.querySelector("[data-guess-reward-code]");
+
+  if (!modalElement || !window.bootstrap || !window.bootstrap.Modal) {
+    return;
+  }
+
+  setText("[data-guess-modal-title]", title || "Accusation result");
+  setText("[data-guess-modal-message]", message || "No result message available.");
+
+  if (rewardContainer && rewardCodeElement) {
+    if (rewardCode) {
+      rewardContainer.classList.remove("d-none");
+      rewardCodeElement.textContent = rewardCode;
+    } else {
+      rewardContainer.classList.add("d-none");
+      rewardCodeElement.textContent = "LOCKED";
+    }
+  }
+
+  if (titleElement) {
+    titleElement.textContent = title || "Accusation result";
+    titleElement.classList.toggle("guess-modal-success", Boolean(rewardCode));
+  }
+
+  if (messageElement) {
+    messageElement.textContent = message || "No result message available.";
+  }
+
+  window.bootstrap.Modal.getOrCreateInstance(modalElement).show();
 }
 
 function escapeHtml(value) {
