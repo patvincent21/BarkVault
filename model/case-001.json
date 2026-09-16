@@ -23,6 +23,7 @@
           "age": 34,
           "occupation": "Records Clerk",
           "imageLabel": "MH",
+          "imagePath": "images/case001/suspects/Mark%20Holloway.jpg",
           "statement": "I've already explained everything to the officers. Yes, Daniel filed a complaint against me. I accessed some records without authorization because I was trying to locate a missing shipment file that had been archived incorrectly.\n\nDaniel assumed I was hiding something and reported me before asking for an explanation. I'll admit I was angry about that. Nobody wants to be dragged into a disciplinary hearing over paperwork.\n\nOn the night of the incident I remained in the office later than usual. I checked out the archive key and reviewed several files, which is probably why everyone thinks I'm involved. But I returned the key shortly afterward and left the archive area.\n\nI did see Daniel earlier that evening. He seemed distracted and told me he was looking into shipping documents. Honestly, he sounded like he thought he was about to uncover some major conspiracy.\n\nYes, I lied about exactly when I left. I didn't want management discovering I was still accessing archived files after being warned not to. That was stupid, but it doesn't make me a murderer."
         },
         {
@@ -30,6 +31,7 @@
           "age": 42,
           "occupation": "Operations Manager",
           "imageLabel": "SQ",
+          "imagePath": "images/case001/suspects/Sarah%20Quinn.jpg",
           "statement": "I spent most of the evening finalizing shipping manifests for incoming vessels. The harbor processes hundreds of shipments every week, and paperwork errors are not uncommon.\n\nDaniel stopped by my office at approximately 21:20. He told me he wanted to discuss some shipping records he had been reviewing. I told him we could discuss the matter in the morning because I was busy preparing reports.\n\nLater in the evening I remained in my office reviewing documents and responding to emails. Several employees entered and left throughout the night.\n\nI've heard investigators are looking at the cargo manifests Daniel was reviewing. Frankly, if he found discrepancies, they were most likely clerical mistakes. People are making far too much of routine administrative issues.\n\nDaniel was an honest employee, but sometimes he became obsessed with proving something was wrong when there was a perfectly ordinary explanation."
         },
         {
@@ -37,6 +39,7 @@
           "age": 29,
           "occupation": "Maintenance Technician",
           "imageLabel": "KM",
+          "imagePath": "images/case001/suspects/Kevin%20Marsh.jpg",
           "statement": "My assignment for the evening was maintaining the corridor camera system. The archive cameras were intentionally taken offline as part of an approved maintenance schedule.\n\nI've heard people suggest the outage somehow helped the killer, but the work order was approved weeks ago. Anyone can verify that.\n\nMost of my time was spent in the electrical control room. I left periodically to test equipment but never entered the archives.\n\nI barely knew Daniel outside of seeing him during patrol rounds. Finding out a murder happened while I was servicing the security system makes me sick. If those cameras had been active, we'd probably have answers already."
         },
         {
@@ -44,6 +47,7 @@
           "age": 47,
           "occupation": "Harbor Supervisor",
           "imageLabel": "LC",
+          "imagePath": "images/case001/suspects/Linda%20Carter.jpg",
           "statement": "I was completing my final walk-through of the building before leaving for the evening. When I reached the archive corridor, I noticed a flashlight beam beneath the door of Archive Room 3.\n\nThat immediately struck me as strange because the room should have been empty. I called Daniel's name several times but received no response.\n\nAfter repeated attempts to contact him, I used my supervisor master key to unlock the room. That's when I discovered him lying motionless between the shelves.\n\nI immediately stepped back, contacted emergency services, and instructed nearby employees not to enter the room. Daniel was strict but dedicated. As far as I knew, the only serious conflict he'd been dealing with recently involved ongoing questions about shipping records."
         },
         {
@@ -51,6 +55,7 @@
           "age": 31,
           "occupation": "Inventory Coordinator",
           "imageLabel": "EB",
+          "imagePath": "images/case001/suspects/Ethan%20Brooks.jpg",
           "statement": "I won't pretend Daniel and I got along. A few days before his death we argued about inventory documentation after he accused my department of bypassing procedures.\n\nMy boots probably left muddy prints throughout half the harbor because I was working outside in rain and cargo runoff most of the evening.\n\nThe truth is Daniel had been asking unusual questions recently. He wanted access to old cargo records and inventory reports that didn't really concern security operations.\n\nI was at Pier 7 for most of the night verifying incoming shipments. Anyone working that dock can confirm I was there.\n\nDid we disagree? Sure. But Daniel wasn't investigating me. Whatever he found was connected to something much bigger than a disagreement between coworkers."
         }
       ],
@@ -209,6 +214,7 @@
 
       "solution": {
         "criminal": "Sarah Quinn",
+        "nextCaseCode": "HARBOR-002-OPEN",
         "motive": "Sarah Quinn had been approving altered shipping manifests to conceal a cargo-fraud scheme operating through the harbor. Daniel Reeves discovered discrepancies and was preparing to report them.",
         "explanation": "The investigation initially focused on Mark Holloway because of his dispute with Daniel, his misleading statement regarding his whereabouts, and his unauthorized archive access. However, records showed Mark returned the archive key before the estimated time of death.\n\nDaniel's notebook referenced a planned meeting with 'S.Q.' on the night of the murder. Investigators also discovered altered shipping manifests signed by Sarah Quinn and an unsent report prepared by Daniel regarding financial irregularities.\n\nMost importantly, access records showed a supervisor master key was used to enter Archive Room 3 at 21:38, shortly before Daniel's death. Sarah Quinn was among the few employees with access to such a key.\n\nDetectives concluded that Sarah arranged to meet Daniel in Archive Room 3, realized he had uncovered evidence of the fraud operation, and killed him to prevent the information from reaching Internal Affairs. She then relied on existing suspicion surrounding Mark Holloway to divert attention away from herself."
       }
