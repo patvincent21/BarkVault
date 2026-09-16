@@ -86,6 +86,17 @@ main,
   text-transform: uppercase;
 }
 
+.login-modal-icon {
+  display: block;
+  width: 5.5rem;
+  height: 5.5rem;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  margin: 0 auto 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
 .nav-link {
   color: var(--text-muted);
 }

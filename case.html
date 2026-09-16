@@ -16,6 +16,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="icon" type="image/jpeg" href="images/iconbarkvault.jpg" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -163,6 +164,32 @@
           <p class="mb-0">Placeholder page where the investigation experience will begin.</p>
         </div>
       </footer>
+    </div>
+
+    <div class="modal fade" id="guessResultModal" tabindex="-1" aria-labelledby="guessResultModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-theme">
+          <div class="modal-header border-0 pb-0">
+            <div>
+              <p class="eyebrow mb-2">Case result</p>
+              <h2 class="modal-title fs-3" id="guessResultModalLabel" data-guess-modal-title>Accusation result</h2>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body pt-2">
+            <div class="case-prose page-copy mb-4" data-guess-modal-message>
+              Reviewing the accusation against the case file.
+            </div>
+            <div class="guess-reward-card d-none" data-guess-reward>
+              <p class="case-label mb-2">Next case access code</p>
+              <div class="guess-reward-code" data-guess-reward-code>LOCKED</div>
+              <p class="form-note mb-0 mt-3" data-guess-reward-copy>
+                Save this code. It will be used to unlock the next case.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script
