@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>barkvault | Case File</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <nav class="navbar navbar-expand-lg navbar-dark py-3">
+        <div class="container">
+          <a class="navbar-brand brand-mark" href="landing.html">
+            <span>barkvault</span>
+          </a>
+          <div class="ms-auto d-flex align-items-center gap-3">
+            <span class="nav-link mb-0" data-current-user-nav>User: Investigator</span>
+            <a class="btn btn-outline-light" href="landing.html">Back to cases</a>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <section class="page-hero section-space-sm">
+          <div class="container">
+            <div class="row g-4 align-items-end">
+              <div class="col-lg-8 reveal-up is-visible">
+                <p class="eyebrow" data-selected-case-id>Case file</p>
+                <h1 class="page-title" data-selected-case-title>Loading case...</h1>
+                <p class="page-copy" data-selected-case-summary>
+                  Pulling the selected investigation from the case model.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space pt-0">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-12 reveal-up is-visible">
+                <article class="case-card case-section-card">
+                  <p class="case-label">Police report</p>
+                  <h2 data-police-report-title>Loading report...</h2>
+                  <div class="case-prose" data-police-report-content>
+                    Reading the incident report from the case file.
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space pt-0">
+          <div class="container">
+            <div class="section-heading reveal-up is-visible mb-4">
+              <p class="eyebrow">Suspect statement</p>
+              <h2>Review each suspect's version of events.</h2>
+            </div>
+            <div class="row g-4" data-suspect-statements>
+              <div class="col-12 reveal-up is-visible">
+                <article class="case-card case-section-card">
+                  <h3>Loading suspect statements...</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space pt-0">
+          <div class="container">
+            <div class="section-heading reveal-up is-visible mb-4">
+              <p class="eyebrow">Witness statement</p>
+              <h2>Cross-check what other people saw and heard.</h2>
+            </div>
+            <div class="row g-4" data-witness-statements>
+              <div class="col-12 reveal-up is-visible">
+                <article class="case-card case-section-card">
+                  <h3>Loading witness statements...</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space pt-0">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-12 reveal-up is-visible">
+                <article class="case-card case-section-card">
+                  <p class="case-label">Medical report</p>
+                  <h2 data-medical-report-examiner>Loading medical report...</h2>
+                  <div class="case-card-meta">
+                    <span class="case-chip" data-medical-cause>Cause of death unavailable</span>
+                    <span class="case-chip" data-medical-time>Time of death unavailable</span>
+                  </div>
+                  <ul class="case-list" data-medical-details>
+                    <li>Loading forensic details...</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space pt-0">
+          <div class="container">
+            <div class="section-heading reveal-up is-visible mb-4">
+              <p class="eyebrow">Collected evidences</p>
+              <h2>Inspect the documented items that break the timeline apart.</h2>
+            </div>
+            <div class="row g-4" data-evidence-list>
+              <div class="col-12 reveal-up is-visible">
+                <article class="case-card case-section-card">
+                  <h3>Loading evidence catalog...</h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-space pt-0">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-12 reveal-up is-visible">
+                <article class="case-card case-section-card">
+                  <p class="case-label">Guess the criminal</p>
+                  <h2 data-guess-question>Loading accusation prompt...</h2>
+                  <p class="page-copy" data-guess-hint>Preparing hint...</p>
+                  <form class="guess-form" data-guess-form>
+                    <div class="row g-3" data-guess-options>
+                      <div class="col-12">
+                        <p class="mb-0">Loading suspect options...</p>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row gap-3 mt-4 align-items-sm-center">
+                      <button class="btn btn-signal" type="submit">Submit accusation</button>
+                      <span class="form-note" data-guess-status aria-live="polite"></span>
+                    </div>
+                  </form>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+          <p class="mb-0">barkvault case file</p>
+          <p class="mb-0">Placeholder page where the investigation experience will begin.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Maintenance Log</title>
+  <desc id="desc">A maintenance clipboard beside a security camera icon.</desc>
+  <rect width="640" height="400" rx="28" fill="#15263d" />
+  <rect x="116" y="82" width="234" height="246" rx="18" fill="#e8dcc7" />
+  <path d="M160 136h146M160 182h146M160 228h146M160 274h116" stroke="#7f7567" stroke-width="8" stroke-linecap="round" />
+  <path d="M412 138h116l32 28v72H412z" fill="#90a2b7" />
+  <circle cx="476" cy="198" r="24" fill="#15263d" />
+  <path d="M452 246l-36 42h120l-36-42" fill="#6d8099" />
+  <rect x="398" y="76" width="178" height="16" rx="8" fill="#f4a261" />
+  <text x="70" y="366" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-07 MAINTENANCE LOG</text>
+</svg>

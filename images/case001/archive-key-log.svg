@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Archive Key Log</title>
+  <desc id="desc">An illustrated brass key resting on a dark archive ledger.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#172435" />
+      <stop offset="100%" stop-color="#0d1b2a" />
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7c87d" />
+      <stop offset="100%" stop-color="#b77a22" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" rx="28" fill="url(#bg)" />
+  <rect x="72" y="68" width="496" height="264" rx="18" fill="#223852" stroke="#3c5877" stroke-width="4" />
+  <path d="M120 120h220M120 165h180M120 210h200M120 255h160" stroke="#7f96af" stroke-width="8" stroke-linecap="round" opacity="0.85" />
+  <circle cx="430" cy="210" r="52" fill="none" stroke="url(#metal)" stroke-width="18" />
+  <path d="M470 210h82v20h-22v18h-20v-18h-16v28h-20v-48h-4z" fill="url(#metal)" />
+  <text x="72" y="358" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-01 ARCHIVE KEY LOG</text>
+</svg>

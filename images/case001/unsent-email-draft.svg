@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Unsent Email Draft</title>
+  <desc id="desc">An email draft window addressed to internal affairs about financial irregularities.</desc>
+  <rect width="640" height="400" rx="28" fill="#132137" />
+  <rect x="84" y="56" width="472" height="288" rx="20" fill="#edf2f7" />
+  <rect x="84" y="56" width="472" height="44" rx="20" fill="#4d6481" />
+  <circle cx="116" cy="78" r="8" fill="#ff8a80" />
+  <circle cx="142" cy="78" r="8" fill="#ffd180" />
+  <circle cx="168" cy="78" r="8" fill="#a7ff83" />
+  <text x="120" y="138" fill="#1a2a3b" font-family="Arial, sans-serif" font-size="22" font-weight="700">To: Harbor Internal Affairs</text>
+  <text x="120" y="176" fill="#1a2a3b" font-family="Arial, sans-serif" font-size="22" font-weight="700">Subject: Financial Irregularities</text>
+  <path d="M120 222h294M120 258h336M120 294h248" stroke="#78889b" stroke-width="8" stroke-linecap="round" />
+  <rect x="402" y="286" width="110" height="32" rx="12" fill="#c44545" />
+  <text x="457" y="308" fill="#fff7ef" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">UNSENT</text>
+  <text x="82" y="374" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-15 UNSENT EMAIL DRAFT</text>
+</svg>

@@ -210,6 +210,105 @@ p {
   min-height: 100%;
 }
 
+.case-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.case-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.case-card-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.case-section-card {
+  padding: 2rem;
+}
+
+.case-prose,
+.case-statement,
+.case-evidence-description {
+  white-space: pre-line;
+}
+
+.case-statement-card,
+.evidence-card {
+  height: 100%;
+}
+
+.case-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 1.1rem;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.case-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-person-meta {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  margin-bottom: 0.85rem;
+}
+
+.case-list {
+  margin: 1.25rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+.case-list li + li {
+  margin-top: 0.7rem;
+}
+
+.guess-option {
+  display: block;
+  height: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.guess-option:hover {
+  border-color: rgba(244, 162, 97, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.guess-option input {
+  margin-right: 0.65rem;
+}
+
+.guess-option-text {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
 .case-label {
   color: var(--accent);
   text-transform: uppercase;

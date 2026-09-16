@@ -1,0 +1,217 @@
+{
+  "currentCaseId": "case-001",
+  "cases": [
+    {
+      "slug": "case-001",
+      "id": "Case 001",
+      "title": "The Harbor Office Murder",
+      "summary": "When harbor security guard Daniel Reeves is found murdered inside a locked archive room, investigators initially suspect a disgruntled records clerk already facing disciplinary action. But as evidence emerges, it becomes clear that nearly every employee had a reason to fear what Daniel had recently discovered. Hidden among shipping records, missing cargo reports, and conflicting testimonies lies a conspiracy far larger than anyone expected.",
+      "difficulty": "Moderate",
+      "location": "Harbor Records Office",
+      "startLabel": "Open Case File",
+      "goal": "Identify the individual responsible for Daniel Reeves' death.",
+      "goalSummary": "Separate genuine evidence from misleading clues. Determine which suspect had the opportunity, motive, and access to silence Daniel Reeves before he exposed the truth.",
+
+      "policeReport": {
+        "title": "Incident Report",
+        "content": "At approximately 22:47 hours on October 14, 2025, Harbor Operations Supervisor Linda Carter contacted authorities after discovering the body of Night Security Guard Daniel Reeves inside Archive Room 3 of the Harbor Records Office. Responding officers arrived shortly afterward and confirmed Daniel Reeves was deceased.\n\nThe victim was found lying face down between two archive shelving units with severe trauma to the rear of the skull. There were no signs of forced entry into the room. Archive Room 3 is protected by key-controlled access and is typically used to store shipping manifests, inventory records, and historical cargo documentation.\n\nAccording to patrol records, Reeves began his evening security rounds at approximately 21:25. Witnesses reported seeing him heading toward the archive corridor shortly afterward. One witness noted that he appeared unusually focused and possibly concerned about something he had recently discovered.\n\nInterviews revealed that Reeves had spent several days reviewing archived shipment records unrelated to his normal duties. Multiple employees confirmed that he had recently raised concerns about discrepancies between inventory reports and cargo manifests. Although some coworkers dismissed his concerns as administrative errors, investigators learned that Reeves had planned to meet with at least one employee on the evening of his death to discuss the records.\n\nSeveral staff members reported hearing a heated argument in the archive wing between 21:35 and 21:45. While the voices could not be identified, witnesses described one person sounding confrontational while the other repeatedly denied wrongdoing.\n\nInvestigators initially focused on Records Clerk Mark Holloway, who had recently been reported by Reeves for unauthorized access to confidential files and was due to attend a disciplinary hearing the next morning. However, as the investigation developed, additional evidence suggested that multiple employees may have had reasons to prevent Reeves from reporting what he had discovered.\n\nComplicating the case further, surveillance cameras covering the corridor were offline due to scheduled maintenance. The outage has left investigators dependent upon witness statements, access records, financial documents, and forensic findings.\n\nAuthorities believe Reeves was killed sometime between 21:35 and 21:50 while attempting to uncover information connected to irregular shipping activity at the harbor. Detectives continue to investigate whether his death was motivated by personal conflict or an attempt to conceal criminal activity."
+      },
+
+      "suspects": [
+        {
+          "name": "Mark Holloway",
+          "age": 34,
+          "occupation": "Records Clerk",
+          "imageLabel": "MH",
+          "statement": "I've already explained everything to the officers. Yes, Daniel filed a complaint against me. I accessed some records without authorization because I was trying to locate a missing shipment file that had been archived incorrectly.\n\nDaniel assumed I was hiding something and reported me before asking for an explanation. I'll admit I was angry about that. Nobody wants to be dragged into a disciplinary hearing over paperwork.\n\nOn the night of the incident I remained in the office later than usual. I checked out the archive key and reviewed several files, which is probably why everyone thinks I'm involved. But I returned the key shortly afterward and left the archive area.\n\nI did see Daniel earlier that evening. He seemed distracted and told me he was looking into shipping documents. Honestly, he sounded like he thought he was about to uncover some major conspiracy.\n\nYes, I lied about exactly when I left. I didn't want management discovering I was still accessing archived files after being warned not to. That was stupid, but it doesn't make me a murderer."
+        },
+        {
+          "name": "Sarah Quinn",
+          "age": 42,
+          "occupation": "Operations Manager",
+          "imageLabel": "SQ",
+          "statement": "I spent most of the evening finalizing shipping manifests for incoming vessels. The harbor processes hundreds of shipments every week, and paperwork errors are not uncommon.\n\nDaniel stopped by my office at approximately 21:20. He told me he wanted to discuss some shipping records he had been reviewing. I told him we could discuss the matter in the morning because I was busy preparing reports.\n\nLater in the evening I remained in my office reviewing documents and responding to emails. Several employees entered and left throughout the night.\n\nI've heard investigators are looking at the cargo manifests Daniel was reviewing. Frankly, if he found discrepancies, they were most likely clerical mistakes. People are making far too much of routine administrative issues.\n\nDaniel was an honest employee, but sometimes he became obsessed with proving something was wrong when there was a perfectly ordinary explanation."
+        },
+        {
+          "name": "Kevin Marsh",
+          "age": 29,
+          "occupation": "Maintenance Technician",
+          "imageLabel": "KM",
+          "statement": "My assignment for the evening was maintaining the corridor camera system. The archive cameras were intentionally taken offline as part of an approved maintenance schedule.\n\nI've heard people suggest the outage somehow helped the killer, but the work order was approved weeks ago. Anyone can verify that.\n\nMost of my time was spent in the electrical control room. I left periodically to test equipment but never entered the archives.\n\nI barely knew Daniel outside of seeing him during patrol rounds. Finding out a murder happened while I was servicing the security system makes me sick. If those cameras had been active, we'd probably have answers already."
+        },
+        {
+          "name": "Linda Carter",
+          "age": 47,
+          "occupation": "Harbor Supervisor",
+          "imageLabel": "LC",
+          "statement": "I was completing my final walk-through of the building before leaving for the evening. When I reached the archive corridor, I noticed a flashlight beam beneath the door of Archive Room 3.\n\nThat immediately struck me as strange because the room should have been empty. I called Daniel's name several times but received no response.\n\nAfter repeated attempts to contact him, I used my supervisor master key to unlock the room. That's when I discovered him lying motionless between the shelves.\n\nI immediately stepped back, contacted emergency services, and instructed nearby employees not to enter the room. Daniel was strict but dedicated. As far as I knew, the only serious conflict he'd been dealing with recently involved ongoing questions about shipping records."
+        },
+        {
+          "name": "Ethan Brooks",
+          "age": 31,
+          "occupation": "Inventory Coordinator",
+          "imageLabel": "EB",
+          "statement": "I won't pretend Daniel and I got along. A few days before his death we argued about inventory documentation after he accused my department of bypassing procedures.\n\nMy boots probably left muddy prints throughout half the harbor because I was working outside in rain and cargo runoff most of the evening.\n\nThe truth is Daniel had been asking unusual questions recently. He wanted access to old cargo records and inventory reports that didn't really concern security operations.\n\nI was at Pier 7 for most of the night verifying incoming shipments. Anyone working that dock can confirm I was there.\n\nDid we disagree? Sure. But Daniel wasn't investigating me. Whatever he found was connected to something much bigger than a disagreement between coworkers."
+        }
+      ],
+
+      "witnessStatements": [
+        {
+          "name": "Tyler Evans",
+          "occupation": "Dock Worker",
+          "statement": "At approximately 21:30 I saw Daniel Reeves walking toward the archive wing carrying his flashlight. He looked determined and was moving faster than usual. I remember thinking he seemed to be heading somewhere specific rather than simply conducting a routine patrol."
+        },
+        {
+          "name": "Natalie Ross",
+          "occupation": "Administrative Assistant",
+          "statement": "Around 21:40 I heard a heated argument coming from the archive corridor. One voice sounded frustrated and demanding answers. The other voice kept insisting there must be some mistake. I couldn't identify either speaker, but one of them sounded female."
+        },
+        {
+          "name": "Jeremy Cole",
+          "occupation": "Security Contractor",
+          "statement": "At approximately 21:50 I observed Mark Holloway leaving through the east exit. He looked nervous, but I remember thinking he seemed more afraid than angry. While making my round a few minutes earlier, I also noticed someone wearing a supervisor-level access badge entering the archive corridor."
+        }
+      ],
+
+      "medicalReport": {
+        "examiner": "Dr. Helen Foster",
+        "causeOfDeath": "Severe blunt force trauma to the skull",
+        "estimatedTimeOfDeath": "21:35 - 21:50",
+        "details": [
+          "Victim suffered a single powerful strike to the back of the head.",
+          "Death would have occurred almost instantly.",
+          "No defensive wounds were found.",
+          "Victim likely did not see the attack coming.",
+          "Body position and blood patterns indicate the victim collapsed immediately and was not moved.",
+          "Victim's wristwatch was shattered during impact and stopped at 21:43."
+        ]
+      },
+
+      "evidences": [
+        {
+          "id": "E-01",
+          "title": "Archive Key Log",
+          "imageLabel": "KEY",
+          "imagePath": "images/case001/archive-key-log.svg",
+          "description": "Archive Room 3 was unlocked at 21:32 and locked again at 21:46."
+        },
+        {
+          "id": "E-02",
+          "title": "Patrol Schedule",
+          "imageLabel": "LOG",
+          "imagePath": "images/case001/patrol-schedule.svg",
+          "description": "Daniel Reeves began his archive patrol route at 21:25."
+        },
+        {
+          "id": "E-03",
+          "title": "Broken Wristwatch",
+          "imageLabel": "TIME",
+          "imagePath": "images/case001/broken-wristwatch.svg",
+          "description": "Victim's watch stopped permanently at 21:43."
+        },
+        {
+          "id": "E-04",
+          "title": "Blood Pattern Analysis",
+          "imageLabel": "LAB",
+          "imagePath": "images/case001/blood-pattern-analysis.svg",
+          "description": "Victim collapsed immediately after being struck."
+        },
+        {
+          "id": "E-05",
+          "title": "Fingerprint Analysis",
+          "imageLabel": "PRINT",
+          "imagePath": "images/case001/fingerprint-evidence.svg",
+          "description": "Fingerprints belonging to both Mark Holloway and Sarah Quinn were recovered throughout Archive Room 3. Investigators could not determine when the prints were left."
+        },
+        {
+          "id": "E-06",
+          "title": "Access Log Records",
+          "imageLabel": "ACCESS",
+          "imagePath": "images/case001/personnel-access-record.svg",
+          "description": "Mark Holloway checked out Archive Room 3's key at 21:28 and returned it at 21:31. System records indicate a supervisor master key accessed the room again at 21:38."
+        },
+        {
+          "id": "E-07",
+          "title": "Maintenance Log",
+          "imageLabel": "CAM",
+          "imagePath": "images/case001/maintenance-log.svg",
+          "description": "Camera maintenance officially started at 21:00."
+        },
+        {
+          "id": "E-08",
+          "title": "Internal Complaint",
+          "imageLabel": "FILE",
+          "imagePath": "images/case001/internal-complaint.svg",
+          "description": "Daniel Reeves reported Mark Holloway for unauthorized records access one week earlier."
+        },
+        {
+          "id": "E-09",
+          "title": "Disciplinary Notice",
+          "imageLabel": "NOTICE",
+          "imagePath": "images/case001/disciplinary-notice.svg",
+          "description": "Management scheduled a disciplinary meeting involving Mark Holloway the following morning."
+        },
+        {
+          "id": "E-10",
+          "title": "Footprint Analysis",
+          "imageLabel": "TRACK",
+          "imagePath": "images/case001/footprint-analysis.svg",
+          "description": "Muddy shoeprints were found near the archive corridor. The tread pattern is consistent with standard harbor-issued work boots worn by multiple employees, including Ethan Brooks."
+        },
+        {
+          "id": "E-11",
+          "title": "Witness Observation",
+          "imageLabel": "EYE",
+          "imagePath": "images/case001/witness-observation.svg",
+          "description": "Mark Holloway was observed leaving the building at approximately 21:50. A separate witness reported seeing a supervisor-level access badge near the archive corridor."
+        },
+        {
+          "id": "E-12",
+          "title": "Timeline Review",
+          "imageLabel": "CLUE",
+          "imagePath": "images/case001/timeline-contradiction.svg",
+          "description": "Mark Holloway initially gave an inaccurate account of when he left the building. He later admitted he remained on site longer than reported while reviewing archived documents."
+        },
+        {
+          "id": "E-13",
+          "title": "Altered Shipping Manifest",
+          "imageLabel": "SHIP",
+          "imagePath": "images/case001/altered-shipping-manifest.svg",
+          "description": "A cargo manifest contains handwritten modifications to container numbers. The approval signature belongs to Sarah Quinn."
+        },
+        {
+          "id": "E-14",
+          "title": "Victim's Notebook",
+          "imageLabel": "NOTE",
+          "imagePath": "images/case001/victims-notebook.svg",
+          "description": "Notes recovered from Daniel Reeves include the entry: 'Need to verify manifests. Meeting with S.Q. tonight.'"
+        },
+        {
+          "id": "E-15",
+          "title": "Unsent Email Draft",
+          "imageLabel": "MAIL",
+          "imagePath": "images/case001/unsent-email-draft.svg",
+          "description": "An unsent email recovered from Daniel's workstation was addressed to Harbor Internal Affairs. Subject: Financial Irregularities."
+        }
+      ],
+
+      "guessTheCriminal": {
+        "question": "Who killed Daniel Reeves?",
+        "suspects": [
+          "Mark Holloway",
+          "Sarah Quinn",
+          "Kevin Marsh",
+          "Linda Carter",
+          "Ethan Brooks"
+        ],
+        "hint": "Several suspects appear suspicious. Focus on who benefited most from Daniel's investigation and who had the ability to access Archive Room 3 after Mark returned the key."
+      },
+
+      "solution": {
+        "criminal": "Sarah Quinn",
+        "motive": "Sarah Quinn had been approving altered shipping manifests to conceal a cargo-fraud scheme operating through the harbor. Daniel Reeves discovered discrepancies and was preparing to report them.",
+        "explanation": "The investigation initially focused on Mark Holloway because of his dispute with Daniel, his misleading statement regarding his whereabouts, and his unauthorized archive access. However, records showed Mark returned the archive key before the estimated time of death.\n\nDaniel's notebook referenced a planned meeting with 'S.Q.' on the night of the murder. Investigators also discovered altered shipping manifests signed by Sarah Quinn and an unsent report prepared by Daniel regarding financial irregularities.\n\nMost importantly, access records showed a supervisor master key was used to enter Archive Room 3 at 21:38, shortly before Daniel's death. Sarah Quinn was among the few employees with access to such a key.\n\nDetectives concluded that Sarah arranged to meet Daniel in Archive Room 3, realized he had uncovered evidence of the fraud operation, and killed him to prevent the information from reaching Internal Affairs. She then relied on existing suspicion surrounding Mark Holloway to divert attention away from herself."
+      }
+    }
+  ]
+}

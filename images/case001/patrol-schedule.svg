@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Patrol Schedule</title>
+  <desc id="desc">A patrol checklist clipped to a board with marked time blocks.</desc>
+  <rect width="640" height="400" rx="28" fill="#16283d" />
+  <rect x="164" y="46" width="312" height="308" rx="24" fill="#eadfcb" />
+  <rect x="250" y="30" width="140" height="34" rx="14" fill="#9aa6b2" />
+  <path d="M214 114h210M214 160h210M214 206h210M214 252h210" stroke="#8b7f6c" stroke-width="8" stroke-linecap="round" />
+  <path d="M230 108l16 16 30-34M230 154l16 16 30-34M230 200l16 16 30-34" fill="none" stroke="#f4a261" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="368" y="246" width="52" height="24" rx="8" fill="#d46a6a" />
+  <text x="74" y="352" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-02 PATROL SCHEDULE</text>
+</svg>

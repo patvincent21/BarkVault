@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   loadCurrentCase();
   initializeUsers();
   hydrateCurrentUser();
+  loadLandingCases();
+  loadSelectedCase();
 
   var revealItems = document.querySelectorAll(".reveal-up");
 
@@ -66,30 +68,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadCurrentCase() {
-  fetch("model/cases.json")
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Failed to load case model.");
-      }
-
-      return response.json();
-    })
+  getCasesModel()
     .then(function (data) {
-      if (!data || !data.currentCase) {
+      var currentCase = findCurrentCase(data);
+
+      if (!currentCase) {
         return;
       }
 
-      setText("[data-case-title]", data.currentCase.title);
-      setText("[data-case-summary]", data.currentCase.summary);
-      setText("[data-case-id]", data.currentCase.id);
-      setText("[data-case-preview-title]", data.currentCase.title);
-      setText("[data-case-preview-summary]", data.currentCase.summary);
-      setText("[data-case-goal]", data.currentCase.goal);
-      setText("[data-case-goal-summary]", data.currentCase.goalSummary);
-      setText("[data-case-evidence-count]", data.currentCase.evidenceCount);
-      setText("[data-case-suspect-count]", data.currentCase.suspectCount);
-      setText("[data-case-report-count]", data.currentCase.reportCount);
-      setText("[data-case-accusation-count]", data.currentCase.accusationCount);
+      setText("[data-case-title]", currentCase.title);
+      setText("[data-case-summary]", currentCase.summary);
+      setText("[data-case-id]", currentCase.id);
+      setText("[data-case-preview-title]", currentCase.title);
+      setText("[data-case-preview-summary]", currentCase.summary);
+      setText("[data-case-goal]", currentCase.goal);
+      setText("[data-case-goal-summary]", currentCase.goalSummary);
+      setText("[data-case-evidence-count]", currentCase.evidenceCount);
+      setText("[data-case-suspect-count]", currentCase.suspectCount);
+      setText("[data-case-report-count]", currentCase.reportCount);
+      setText("[data-case-accusation-count]", currentCase.accusationCount);
     })
     .catch(function () {
       setText("[data-case-title]", "Current case unavailable");
@@ -101,8 +98,136 @@ function loadCurrentCase() {
     });
 }
 
+var casesModelPromise;
+
 var barkvaultUsers = [];
 var usersReadyPromise;
+
+function getCasesModel() {
+  if (!casesModelPromise) {
+    casesModelPromise = fetch("model/cases.json")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to load case model.");
+        }
+
+        return response.json();
+      });
+  }
+
+  return casesModelPromise;
+}
+
+function findCurrentCase(data) {
+  if (!data || !Array.isArray(data.cases) || !data.cases.length) {
+    return null;
+  }
+
+  var currentCase = data.cases.find(function (caseItem) {
+    return caseItem.slug === data.currentCaseId;
+  });
+
+  return currentCase || data.cases[0];
+}
+
+function loadLandingCases() {
+  var container = document.querySelector("[data-case-catalog]");
+
+  if (!container) {
+    return;
+  }
+
+  getCasesModel()
+    .then(function (data) {
+      var caseItems = data && Array.isArray(data.cases) ? data.cases : [];
+
+      if (!caseItems.length) {
+        container.innerHTML =
+          '<div class="col-12 reveal-up is-visible"><article class="case-card h-100"><h3>No cases available</h3><p>Add case entries to model/cases.json to populate this catalog.</p></article></div>';
+        return;
+      }
+
+      container.innerHTML = caseItems
+        .map(function (caseItem) {
+          return (
+            '<div class="col-lg-4 col-md-6 reveal-up is-visible">' +
+            '<article class="case-card h-100 d-flex flex-column">' +
+            '<p class="case-label">' + escapeHtml(caseItem.id) + '</p>' +
+            '<h3>' + escapeHtml(caseItem.title) + '</h3>' +
+            '<p>' + escapeHtml(caseItem.summary) + '</p>' +
+            '<div class="case-card-meta">' +
+            '<span class="case-chip">' + escapeHtml(caseItem.difficulty || 'Unknown difficulty') + '</span>' +
+            '<span class="case-chip">' + String(caseItem.suspectCount || 0) + ' suspects</span>' +
+            '<span class="case-chip">' + String(caseItem.evidenceCount || 0) + ' evidence items</span>' +
+            '</div>' +
+            '<div class="case-card-actions">' +
+            '<a class="btn btn-signal" href="case.html?case=' + encodeURIComponent(caseItem.slug || '') + '">' +
+            escapeHtml(caseItem.startLabel || 'Start case') +
+            '</a>' +
+            '</div>' +
+            '</article>' +
+            '</div>'
+          );
+        })
+        .join("");
+    })
+    .catch(function () {
+      container.innerHTML =
+        '<div class="col-12 reveal-up is-visible"><article class="case-card h-100"><h3>Case catalog unavailable</h3><p>The landing page could not read model/cases.json.</p></article></div>';
+    });
+}
+
+function loadSelectedCase() {
+  var titleElement = document.querySelector("[data-selected-case-title]");
+
+  if (!titleElement) {
+    return;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var selectedSlug = params.get("case");
+
+  getCaseDetailModel(selectedSlug || "case-001")
+    .then(function (data) {
+      var selectedCase = findCurrentCase(data);
+
+      if (!selectedCase) {
+        setText("[data-selected-case-id]", "Case unavailable");
+        setText("[data-selected-case-title]", "No case found");
+        setText("[data-selected-case-summary]", "The requested case does not exist in the current model.");
+        return;
+      }
+
+      document.title = "barkvault | " + selectedCase.title;
+      setText("[data-selected-case-id]", selectedCase.id);
+      setText("[data-selected-case-title]", selectedCase.title);
+      setText("[data-selected-case-summary]", selectedCase.summary);
+      renderPoliceReport(selectedCase.policeReport);
+      renderSuspects(selectedCase.suspects);
+      renderWitnessStatements(selectedCase.witnessStatements);
+      renderMedicalReport(selectedCase.medicalReport);
+      renderEvidences(selectedCase.evidences);
+      renderGuessTheCriminal(selectedCase.guessTheCriminal, selectedCase.solution);
+    })
+    .catch(function () {
+      setText("[data-selected-case-id]", "Case unavailable");
+      setText("[data-selected-case-title]", "Failed to load case");
+      setText("[data-selected-case-summary]", "Check that the site is being served over HTTP and the case model is available.");
+      setText("[data-police-report-title]", "Case report unavailable");
+      setText("[data-police-report-content]", "The detailed case file could not be loaded.");
+    });
+}
+
+function getCaseDetailModel(caseSlug) {
+  return fetch("model/" + caseSlug + ".json")
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("Failed to load case detail model.");
+      }
+
+      return response.json();
+    });
+}
 
 function initializeUsers() {
   if (!usersReadyPromise) {
@@ -210,4 +335,219 @@ function hydrateCurrentUser() {
   } catch (error) {
     sessionStorage.removeItem("barkvaultCurrentUser");
   }
+}
+
+function renderPoliceReport(policeReport) {
+  if (!policeReport) {
+    return;
+  }
+
+  setText("[data-police-report-title]", policeReport.title || "Police report");
+  setText("[data-police-report-content]", policeReport.content || "No incident narrative available.");
+}
+
+function renderSuspects(suspects) {
+  var container = document.querySelector("[data-suspect-statements]");
+
+  if (!container) {
+    return;
+  }
+
+  if (!Array.isArray(suspects) || !suspects.length) {
+    container.innerHTML = '<div class="col-12"><article class="case-card case-section-card"><h3>No suspect statements available.</h3></article></div>';
+    return;
+  }
+
+  container.innerHTML = suspects
+    .map(function (suspect) {
+      return (
+        '<div class="col-lg-6 reveal-up is-visible">' +
+        '<article class="case-card case-statement-card">' +
+        '<div class="case-media"><img src="' + buildGeneratedImage('suspect', suspect.imageLabel || suspect.name, suspect.name) + '" alt="Portrait placeholder for ' + escapeAttribute(suspect.name) + '" /></div>' +
+        '<p class="case-label">' + escapeHtml(suspect.name) + '</p>' +
+        '<p class="case-person-meta">' + escapeHtml(String(suspect.age)) + ' years old | ' + escapeHtml(suspect.occupation) + '</p>' +
+        '<div class="case-statement">' + escapeHtml(suspect.statement) + '</div>' +
+        '</article>' +
+        '</div>'
+      );
+    })
+    .join("");
+}
+
+function renderWitnessStatements(witnessStatements) {
+  var container = document.querySelector("[data-witness-statements]");
+
+  if (!container) {
+    return;
+  }
+
+  if (!Array.isArray(witnessStatements) || !witnessStatements.length) {
+    container.innerHTML = '<div class="col-12"><article class="case-card case-section-card"><h3>No witness statements available.</h3></article></div>';
+    return;
+  }
+
+  container.innerHTML = witnessStatements
+    .map(function (witness) {
+      return (
+        '<div class="col-lg-4 reveal-up is-visible">' +
+        '<article class="case-card case-statement-card">' +
+        '<p class="case-label">' + escapeHtml(witness.name) + '</p>' +
+        '<p class="case-person-meta">' + escapeHtml(witness.occupation) + '</p>' +
+        '<div class="case-statement">' + escapeHtml(witness.statement) + '</div>' +
+        '</article>' +
+        '</div>'
+      );
+    })
+    .join("");
+}
+
+function renderMedicalReport(medicalReport) {
+  if (!medicalReport) {
+    return;
+  }
+
+  setText("[data-medical-report-examiner]", medicalReport.examiner || "Medical report");
+  setText("[data-medical-cause]", medicalReport.causeOfDeath || "Cause of death unavailable");
+  setText("[data-medical-time]", medicalReport.estimatedTimeOfDeath || "Time of death unavailable");
+
+  var detailsList = document.querySelector("[data-medical-details]");
+
+  if (detailsList) {
+    detailsList.innerHTML = (medicalReport.details || [])
+      .map(function (detail) {
+        return '<li>' + escapeHtml(detail) + '</li>';
+      })
+      .join("");
+  }
+}
+
+function renderEvidences(evidences) {
+  var container = document.querySelector("[data-evidence-list]");
+
+  if (!container) {
+    return;
+  }
+
+  if (!Array.isArray(evidences) || !evidences.length) {
+    container.innerHTML = '<div class="col-12"><article class="case-card case-section-card"><h3>No evidence entries available.</h3></article></div>';
+    return;
+  }
+
+  container.innerHTML = evidences
+    .map(function (evidence) {
+      return (
+        '<div class="col-lg-4 col-md-6 reveal-up is-visible">' +
+        '<article class="case-card evidence-card">' +
+        '<div class="case-media"><img src="' + resolveCaseImage(evidence.imagePath, buildGeneratedImage('evidence', evidence.imageLabel || evidence.id, evidence.title)) + '" alt="Evidence image for ' + escapeAttribute(evidence.title) + '" /></div>' +
+        '<p class="case-label">' + escapeHtml(evidence.id) + '</p>' +
+        '<h3>' + escapeHtml(evidence.title) + '</h3>' +
+        '<p class="case-evidence-description">' + escapeHtml(evidence.description) + '</p>' +
+        '</article>' +
+        '</div>'
+      );
+    })
+    .join("");
+}
+
+function renderGuessTheCriminal(guessTheCriminal, solution) {
+  if (!guessTheCriminal) {
+    return;
+  }
+
+  setText("[data-guess-question]", guessTheCriminal.question || "Guess the criminal");
+  setText("[data-guess-hint]", guessTheCriminal.hint || "Review the evidence carefully before accusing a suspect.");
+
+  var optionsContainer = document.querySelector("[data-guess-options]");
+  var form = document.querySelector("[data-guess-form]");
+  var status = document.querySelector("[data-guess-status]");
+
+  if (!optionsContainer || !form) {
+    return;
+  }
+
+  optionsContainer.innerHTML = (guessTheCriminal.suspects || [])
+    .map(function (suspectName, index) {
+      var inputId = "guess-suspect-" + index;
+
+      return (
+        '<div class="col-lg-4 col-md-6">' +
+        '<label class="guess-option" for="' + inputId + '">' +
+        '<input type="radio" name="criminalGuess" id="' + inputId + '" value="' + escapeAttribute(suspectName) + '" />' +
+        '<span class="guess-option-text">' + escapeHtml(suspectName) + '</span>' +
+        '</label>' +
+        '</div>'
+      );
+    })
+    .join("");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var selectedOption = form.querySelector("input[name='criminalGuess']:checked");
+
+    if (!selectedOption) {
+      if (status) {
+        status.textContent = "Select a suspect before submitting your accusation.";
+      }
+      return;
+    }
+
+    if (selectedOption.value === (solution && solution.criminal)) {
+      if (status) {
+        status.textContent = "Correct. " + solution.explanation;
+      }
+    } else if (status) {
+      status.textContent = "That accusation does not fit the evidence. " + (guessTheCriminal.hint || "Review the contradictions and try again.");
+    }
+  });
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function escapeAttribute(value) {
+  return escapeHtml(value);
+}
+
+function buildGeneratedImage(kind, label, title) {
+  var palette = kind === 'suspect'
+    ? { start: '#2d4f6c', end: '#0d1b2a', accent: '#f4a261' }
+    : { start: '#5a3c1f', end: '#1b263b', accent: '#ffd166' };
+  var safeLabel = String(label || '').slice(0, 8).toUpperCase();
+  var safeTitle = String(title || '').slice(0, 44);
+  var svg = '' +
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">' +
+    '<defs>' +
+    '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">' +
+    '<stop offset="0%" stop-color="' + palette.start + '" />' +
+    '<stop offset="100%" stop-color="' + palette.end + '" />' +
+    '</linearGradient>' +
+    '</defs>' +
+    '<rect width="640" height="400" rx="28" fill="url(#bg)" />' +
+    '<circle cx="510" cy="82" r="74" fill="rgba(255,255,255,0.07)" />' +
+    '<circle cx="122" cy="330" r="108" fill="rgba(255,255,255,0.05)" />' +
+    '<rect x="34" y="34" width="572" height="332" rx="22" fill="none" stroke="rgba(255,255,255,0.12)" />' +
+    '<text x="52" y="110" fill="' + palette.accent + '" font-family="Arial, sans-serif" font-size="76" font-weight="700">' + escapeSvgText(safeLabel) + '</text>' +
+    '<text x="52" y="160" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">' + escapeSvgText(kind.toUpperCase()) + '</text>' +
+    '<text x="52" y="316" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="30" font-weight="600">' + escapeSvgText(safeTitle) + '</text>' +
+    '</svg>';
+
+  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+}
+
+function escapeSvgText(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function resolveCaseImage(imagePath, fallbackSrc) {
+  return imagePath || fallbackSrc;
 }

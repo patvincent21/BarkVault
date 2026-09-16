@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Footprint Analysis</title>
+  <desc id="desc">Bootprint casts laid out on a forensic tray.</desc>
+  <rect width="640" height="400" rx="28" fill="#142338" />
+  <rect x="70" y="58" width="500" height="284" rx="20" fill="#28384b" stroke="#415c78" stroke-width="4" />
+  <g fill="#d8ccc0">
+    <path d="M216 120c18 0 32 14 32 32v30c0 18 10 34 28 48l24 18c10 8 14 20 10 30-8 18-40 20-62 4l-56-40c-28-20-42-44-42-72 0-30 26-50 66-50z" />
+    <path d="M398 164c16 0 30 12 30 30v26c0 16 8 30 24 42l20 16c10 8 14 18 10 28-8 16-34 18-54 4l-48-34c-22-16-34-38-34-62 0-30 22-50 52-50z" />
+  </g>
+  <path d="M168 214h140M370 248h96" stroke="#b04a4a" stroke-width="8" stroke-dasharray="14 14" />
+  <text x="74" y="372" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-10 FOOTPRINT ANALYSIS</text>
+</svg>

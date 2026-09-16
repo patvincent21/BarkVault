@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Internal Complaint</title>
+  <desc id="desc">A complaint document stamped confidential.</desc>
+  <rect width="640" height="400" rx="28" fill="#142338" />
+  <rect x="166" y="44" width="308" height="312" rx="18" fill="#efe6d8" />
+  <path d="M220 112h188M220 154h188M220 196h188M220 238h152" stroke="#857a6f" stroke-width="8" stroke-linecap="round" />
+  <g transform="translate(330 258) rotate(-15)">
+    <rect x="-96" y="-32" width="192" height="64" rx="12" fill="none" stroke="#b53939" stroke-width="8" />
+    <text x="0" y="10" fill="#b53939" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+  </g>
+  <text x="76" y="376" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-08 INTERNAL COMPLAINT</text>
+</svg>

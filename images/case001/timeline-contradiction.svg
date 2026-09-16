@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Timeline Contradiction</title>
+  <desc id="desc">A timeline graphic showing contradictory reported times.</desc>
+  <rect width="640" height="400" rx="28" fill="#132136" />
+  <path d="M96 216h448" stroke="#f8f9fa" stroke-width="10" stroke-linecap="round" />
+  <circle cx="164" cy="216" r="18" fill="#f4a261" />
+  <circle cx="322" cy="216" r="18" fill="#f4a261" />
+  <circle cx="480" cy="216" r="18" fill="#f4a261" />
+  <path d="M164 126v70M322 126v70M480 126v70" stroke="#7087a2" stroke-width="6" stroke-linecap="round" />
+  <text x="138" y="112" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="24" font-weight="700">21:10</text>
+  <text x="296" y="112" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="24" font-weight="700">21:28</text>
+  <text x="454" y="112" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="24" font-weight="700">21:50</text>
+  <path d="M178 88l118 0" stroke="#c64545" stroke-width="8" stroke-linecap="round" />
+  <path d="M262 70l34 18-34 18" fill="none" stroke="#c64545" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="92" y="344" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-12 TIMELINE CONTRADICTION</text>
+</svg>

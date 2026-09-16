@@ -1,13 +1,20 @@
 {
-  "currentCase": {
-    "id": "Case 001",
-    "title": "The Harbor Office Murder",
-    "summary": "A night guard is found dead inside a locked records room, and the timeline does not match the suspect's alibi.",
-    "evidenceCount": 12,
-    "suspectCount": 5,
-    "reportCount": 3,
-    "accusationCount": 1,
-    "goal": "Find the contradiction that breaks the cover story.",
-    "goalSummary": "Compare the records room key log, patrol route, witness account, and injury pattern."
-  }
+  "currentCaseId": "case-001",
+  "cases": [
+    {
+      "slug": "case-001",
+      "id": "Case 001",
+      "title": "The Harbor Office Murder",
+      "summary": "A night guard is found dead inside a locked records room, and the timeline does not match the suspect's alibi.",
+      "evidenceCount": 12,
+      "suspectCount": 5,
+      "reportCount": 3,
+      "accusationCount": 1,
+      "goal": "Find the contradiction that breaks the cover story.",
+      "goalSummary": "Compare the records room key log, patrol route, witness account, and injury pattern.",
+      "difficulty": "Moderate",
+      "location": "Harbor records office",
+      "startLabel": "Open case file"
+    }
+  ]
 }

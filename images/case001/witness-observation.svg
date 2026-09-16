@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Witness Observation</title>
+  <desc id="desc">An eye witness motif with a silhouetted figure leaving an exit.</desc>
+  <rect width="640" height="400" rx="28" fill="#15263d" />
+  <path d="M96 198c48-58 106-88 184-88s136 30 184 88c-48 58-106 88-184 88S144 256 96 198z" fill="none" stroke="#f8f9fa" stroke-width="12" />
+  <circle cx="280" cy="198" r="54" fill="#90a4bd" />
+  <circle cx="280" cy="198" r="24" fill="#15263d" />
+  <rect x="466" y="116" width="94" height="164" rx="10" fill="#22364f" stroke="#4e6887" stroke-width="4" />
+  <path d="M508 230l28-32v18h24v28h-24v18z" fill="#f4a261" />
+  <circle cx="496" cy="246" r="16" fill="#f8f9fa" />
+  <text x="64" y="370" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-11 WITNESS OBSERVATION</text>
+</svg>

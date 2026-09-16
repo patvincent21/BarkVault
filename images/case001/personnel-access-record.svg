@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Personnel Access Record</title>
+  <desc id="desc">An employee access badge with timestamp markings.</desc>
+  <rect width="640" height="400" rx="28" fill="#142338" />
+  <rect x="154" y="58" width="332" height="284" rx="24" fill="#e9dfcf" />
+  <circle cx="320" cy="150" r="52" fill="#9fb4c8" />
+  <circle cx="320" cy="140" r="22" fill="#e9dfcf" />
+  <path d="M280 192c12-20 27-30 40-30s28 10 40 30v30h-80z" fill="#e9dfcf" />
+  <path d="M224 242h192M224 278h160" stroke="#817562" stroke-width="8" stroke-linecap="round" />
+  <rect x="388" y="88" width="68" height="30" rx="8" fill="#f4a261" />
+  <text x="242" y="320" fill="#18212f" font-family="Arial, sans-serif" font-size="28" font-weight="700">21:28 ACCESS</text>
+  <text x="58" y="370" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-06 PERSONNEL ACCESS RECORD</text>
+</svg>

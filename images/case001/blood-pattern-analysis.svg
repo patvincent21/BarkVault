@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Blood Pattern Analysis</title>
+  <desc id="desc">Stylized forensic blood pattern markers across an analysis board.</desc>
+  <rect width="640" height="400" rx="28" fill="#15243a" />
+  <rect x="68" y="56" width="504" height="288" rx="20" fill="#ecdfca" />
+  <circle cx="202" cy="176" r="58" fill="#8f1f28" opacity="0.92" />
+  <circle cx="286" cy="126" r="18" fill="#8f1f28" />
+  <circle cx="336" cy="222" r="14" fill="#8f1f28" />
+  <circle cx="414" cy="154" r="24" fill="#8f1f28" />
+  <circle cx="458" cy="238" r="12" fill="#8f1f28" />
+  <path d="M170 242l54-54M286 126l98 24M336 222l112 8" stroke="#30445d" stroke-width="6" stroke-dasharray="10 10" />
+  <text x="98" y="112" fill="#30445d" font-family="Arial, sans-serif" font-size="30" font-weight="700">Forensic Impact Map</text>
+  <text x="60" y="364" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-04 BLOOD PATTERN ANALYSIS</text>
+</svg>

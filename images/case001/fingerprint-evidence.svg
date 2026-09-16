@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Fingerprint Evidence</title>
+  <desc id="desc">A magnified fingerprint captured on a forensic scan panel.</desc>
+  <rect width="640" height="400" rx="28" fill="#122033" />
+  <rect x="96" y="54" width="448" height="292" rx="22" fill="#1d324d" stroke="#355171" stroke-width="4" />
+  <path d="M322 284c44 0 78-35 78-80 0-55-38-96-90-96-48 0-88 37-88 87 0 44 26 72 58 72 24 0 40-18 40-42 0-24-13-39-29-39-16 0-27 12-27 28 0 12 6 20 16 20" fill="none" stroke="#f4a261" stroke-width="10" stroke-linecap="round" />
+  <path d="M350 284c54-6 96-52 96-106 0-76-58-132-136-132-74 0-136 58-136 132 0 62 34 110 84 128" fill="none" stroke="#f8f9fa" stroke-width="8" stroke-linecap="round" opacity="0.85" />
+  <path d="M288 284c-54-12-94-58-94-116 0-66 52-118 116-118 68 0 120 52 120 120" fill="none" stroke="#90a7bf" stroke-width="6" stroke-linecap="round" opacity="0.75" />
+  <text x="128" y="328" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="24" letter-spacing="3">FORENSIC MATCH FLAGGED</text>
+  <text x="74" y="376" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-05 FINGERPRINT EVIDENCE</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Victim's Notebook</title>
+  <desc id="desc">A field notebook opened to handwritten investigation notes.</desc>
+  <rect width="640" height="400" rx="28" fill="#142338" />
+  <rect x="120" y="58" width="184" height="284" rx="18" fill="#e7dcc7" />
+  <rect x="336" y="58" width="184" height="284" rx="18" fill="#efe5d6" />
+  <path d="M320 58v284" stroke="#b9ab97" stroke-width="8" />
+  <path d="M158 120h108M158 160h108M158 200h120M158 240h92" stroke="#8a7d6a" stroke-width="8" stroke-linecap="round" />
+  <path d="M366 120h120M366 160h120M366 200h100" stroke="#8a7d6a" stroke-width="8" stroke-linecap="round" />
+  <text x="364" y="248" fill="#b53c3c" font-family="Courier New, monospace" font-size="24" font-weight="700">Need to verify</text>
+  <text x="364" y="280" fill="#b53c3c" font-family="Courier New, monospace" font-size="24" font-weight="700">manifests.</text>
+  <text x="364" y="312" fill="#b53c3c" font-family="Courier New, monospace" font-size="24" font-weight="700">Meeting with S.Q.</text>
+  <text x="80" y="374" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-14 VICTIM'S NOTEBOOK</text>
+</svg>

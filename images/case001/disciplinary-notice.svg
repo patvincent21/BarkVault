@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Disciplinary Notice</title>
+  <desc id="desc">A formal notice document with a highlighted warning banner.</desc>
+  <rect width="640" height="400" rx="28" fill="#132135" />
+  <rect x="176" y="44" width="288" height="312" rx="18" fill="#efe6d8" />
+  <rect x="176" y="44" width="288" height="62" rx="18" fill="#c44e4e" />
+  <text x="320" y="84" fill="#fff7ef" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">DISCIPLINARY NOTICE</text>
+  <path d="M222 146h196M222 188h196M222 230h196M222 272h148" stroke="#837766" stroke-width="8" stroke-linecap="round" />
+  <circle cx="412" cy="288" r="22" fill="#f4a261" />
+  <text x="412" y="296" fill="#142338" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">!</text>
+  <text x="72" y="374" fill="#f8f9fa" font-family="Arial, sans-serif" font-size="28" font-weight="700">E-09 DISCIPLINARY NOTICE</text>
+</svg>
